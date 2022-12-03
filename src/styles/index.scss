@@ -1,0 +1,101 @@
+@import 'vars';
+
+body{
+    background-color: $bg-color;
+    color: $text-color;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 85%;
+}
+section, header{
+    background-color: $bg-secondary-color;
+    padding: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: $bg-complementary-color;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+    img{
+        width: 3rem;
+        height: auto;
+    }
+    nav{
+        display: flex;
+        gap: 1rem;
+        a{
+            text-decoration: none;
+            color: $text-color;
+            font-size: 1.5rem;
+            height: 120%;
+            &:hover{
+                color: $bg-complementary-color;
+            }
+        }
+    }
+    .user-details{
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+main{
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    grid-template-columns: 70% 1fr;
+    section{
+        h1{
+            text-align: center;
+        }
+        .products{
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(3, 1fr);
+            .product{
+                background-color: $bg-color;
+                padding: .5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                h3{
+                    text-align: center;
+                    margin:  .5rem 0 0 0 ;
+                }
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+                .product-details{
+                    text-align: center;
+                }
+                button{
+                    @include btn();
+                }
+            }
+        }
+    }
+    aside{
+        section{
+            h2{
+                text-align: center;
+                color: $bg-complementary-color;
+            }
+            form{
+                padding: 0 1rem;
+                display: flex;
+                flex-direction: column;
+                input{
+                    outline: none;
+                    padding: 0.2rem 0 0.2rem 0.5rem;
+                }
+            }
+        }
+    }
+}

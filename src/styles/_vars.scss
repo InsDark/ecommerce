@@ -1,0 +1,19 @@
+$bg-color: #272833;
+$bg-secondary-color: #2F303B;
+$bg-complementary-color: #EC736C;
+$text-color: #FFFFFF;
+$text-secondary-color: #494957;
+
+
+@mixin btn {
+    background-color: $bg-complementary-color; 
+    width: 50%;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    color: $text-color;
+    padding: .5rem;
+    &:hover{
+        background-color: $text-secondary-color;
+    }
+}
