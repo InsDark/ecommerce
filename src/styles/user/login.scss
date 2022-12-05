@@ -1,0 +1,26 @@
+@import './../vars';
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    padding: 1rem;
+    width: clamp(20rem, 70%, 40%);
+    justify-content: center;
+    background-color: $bg-secondary-color;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    form{
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        button{
+            @include btn(100%);
+        }
+    }
+    
+}

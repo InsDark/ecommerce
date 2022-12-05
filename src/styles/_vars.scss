@@ -5,9 +5,9 @@ $text-color: #FFFFFF;
 $text-secondary-color: #494957;
 
 
-@mixin btn {
+@mixin btn($width) {
     background-color: $bg-complementary-color; 
-    width: 50%;
+    width: $width;
     margin: 0 auto;
     border: none;
     cursor: pointer;

@@ -1,0 +1,28 @@
+@import 'vars';
+
+body{
+    background-color: $bg-color;
+    color: $text-color;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 85%;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: $bg-complementary-color;
+    text-align: center;
+    margin: 0;
+}
+
+a{
+    color: $text-color;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+    border: none;
+    padding: .3rem 0 .3rem .5rem;
+}
