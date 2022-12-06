@@ -23,25 +23,42 @@ header{
     align-items: center;
     margin-bottom: 1rem;
     img{
-        width: 3rem;
+        width: 5rem;
         height: auto;
     }
-    nav{
+    form{
+        padding: .5rem;
+        background-color: $bg-color;
+        border-radius: .5rem;
         display: flex;
-        gap: 1rem;
-        a{
-            text-decoration: none;
+        align-items: center;
+        border: 1px solid transparent;
+        input{
+            background-color: $bg-color;
             color: $text-color;
-            font-size: 1.5rem;
-            height: 120%;
-            &:hover{
-                color: $bg-complementary-color;
-            }
+            border: none;
+        }
+        button{
+            background-color: $bg-complementary-color;
+            width: 100%;
+            height: auto;
+            padding: .5rem;
+            border-radius: 50%;
+        }
+        &:hover{
+
+            border: 1px solid $bg-complementary-color;
         }
     }
     .user-details{
         display: flex;
         gap: 1rem;
+        a:has(i) {
+            font-size: 1.2rem;
+            i{
+                padding-right: .5rem;
+            }
+        }
     }
 }
 
@@ -76,26 +93,29 @@ main{
                     text-align: center;
                 }
                 button{
-                    @include btn();
+                    @include btn(50%);
                 }
             }
         }
     }
     aside{
-        section{
-            h2{
-                text-align: center;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        height: fit-content;
+        position:sticky;
+        top: 1rem;
+        gap: 1rem;
+        background-color: $bg-secondary-color;
+        a{
+            padding: 1rem 0;
+            font-size: 1.2rem;
+            text-align: center;
+            &:hover{
                 color: $bg-complementary-color;
+                background-color: $bg-color;
             }
-            form{
-                padding: 0 1rem;
-                display: flex;
-                flex-direction: column;
-                input{
-                    outline: none;
-                    padding: 0.2rem 0 0.2rem 0.5rem;
-                }
-            }
+            
         }
     }
 }

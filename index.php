@@ -19,7 +19,9 @@
         } else {
             require_once 'views/layout/header.php';
             require_once 'views/products/featuresPhones.php';
-            
+            require_once 'controllers/BrandsController.php';
+            $brandsController = new brandsController();
+            $brandsController->getBrands();
         }
     ?>
 </body>

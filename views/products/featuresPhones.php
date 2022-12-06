@@ -40,4 +40,9 @@
                 </div>
             </div>
         </section>
+            <?php 
+            require_once 'controllers/BrandsController.php';
+            $brandsController = new BrandsController();
+            $brandsController->getBrands();
+            ?>
     </main>
