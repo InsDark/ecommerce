@@ -52,7 +52,14 @@ header{
     }
     .user-details{
         display: flex;
+        align-items: center;
         gap: 1rem;
+        a{
+            color: $bg-complementary-color;
+        }
+        img{
+            border-radius: 50%;
+        }
         a:has(i) {
             font-size: 1.2rem;
             i{

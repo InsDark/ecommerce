@@ -4,7 +4,7 @@
             <div class='products'>
                 <div class='product'>
                     <h3>Realme Gt Neo 2</h3>
-                    <img src="src/img/Realme-GT-Neo-2-2-3372631992.png" alt="phone-img">
+                    <img src="src/pictures/site/Realme-GT-Neo-2-2-3372631992.png" alt="phone-img">
                     <div class='product-details'>
                         <span>$ 230.00</span> -
                         <span> 5 Units</span>
@@ -13,7 +13,7 @@
                 </div>
                 <div class='product'>
                     <h3>Realme Gt Neo 2</h3>
-                    <img src="src/img/Realme-GT-Neo-2-2-3372631992.png" alt="phone-img">
+                    <img src="src/pictures/site/Realme-GT-Neo-2-2-3372631992.png" alt="phone-img">
                     <div class='product-details'>
                         <span>$ 230.00</span> -
                         <span> 5 Units</span>
@@ -22,7 +22,7 @@
                 </div>
                 <div class='product'>
                     <h3>Realme Gt Neo 2</h3>
-                    <img src="src/img/Realme-GT-Neo-2-2-3372631992.png" alt="phone-img">
+                    <img src="src/pictures/site/Realme-GT-Neo-2-2-3372631992.png" alt="phone-img">
                     <div class='product-details'>
                         <span>$ 230.00</span> -
                         <span> 5 Units</span>
@@ -31,7 +31,7 @@
                 </div>
                 <div class='product'>
                     <h3>Realme Gt Neo 2</h3>
-                    <img src="src/img/Realme-GT-Neo-2-2-3372631992.png" alt="phone-img">
+                    <img src="src/pictures/site/Realme-GT-Neo-2-2-3372631992.png" alt="phone-img">
                     <div class='product-details'>
                         <span>$ 230.00</span> -
                         <span> 5 Units</span>

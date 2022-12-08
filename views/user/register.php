@@ -3,10 +3,11 @@
 <?php if(!isset($_SESSION)) {
     session_start();
 } ?>
+
 <body>
     <main>
         <h1>Register</h1>
-        <form method="post" enctype='multipart/form-data'>
+        <form method="post" enctype='multipart/form-data' action='<?php echo BASE_URL?>models/userModel.php?action=saveUser'>
             <label for="user-name" action='models/userModel.php'>Name: <span>
                 <?php 
                     if(isset($_SESSION['errors']['user-error'])) {
