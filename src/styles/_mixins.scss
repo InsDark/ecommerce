@@ -1,0 +1,31 @@
+@import 'vars';
+@mixin btn($width){
+        background-color: $bg-complementary-color;
+        width: $width;
+        height: auto;
+        padding: .5rem;
+        cursor: pointer;
+        &:hover{
+            color: $text-color;
+        }
+}
+
+@mixin link() {
+    color: $text-color;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+    &:hover{
+        color: $bg-complementary-color;
+        background-color: $bg-color;
+    }
+}
+
+@mixin input {
+    background-color: $bg-color;
+    color: $text-color;
+    border: none;
+}

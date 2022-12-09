@@ -13,67 +13,7 @@ section, header{
     padding: 1rem;
 }
 
-h1, h2, h3, h4, h5, h6{
-    color: $bg-complementary-color;
-}
-
-header{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 1rem;
-    img{
-        width: 5rem;
-        height: auto;
-    }
-    form{
-        padding: .5rem;
-        background-color: $bg-color;
-        border-radius: .5rem;
-        display: flex;
-        align-items: center;
-        border: 1px solid transparent;
-        input{
-            background-color: $bg-color;
-            color: $text-color;
-            border: none;
-        }
-        button{
-            background-color: $bg-complementary-color;
-            width: 100%;
-            height: auto;
-            padding: .5rem;
-            border-radius: 50%;
-        }
-        &:hover{
-
-            border: 1px solid $bg-complementary-color;
-        }
-    }
-    .user-details{
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        a{
-            color: $bg-complementary-color;
-        }
-        img{
-            border-radius: 50%;
-        }
-        a:has(i) {
-            font-size: 1.2rem;
-            i{
-                padding-right: .5rem;
-            }
-        }
-    }
-}
-
 main{
-    display: grid;
-    gap: 1rem;
-    width: 100%;
-    grid-template-columns: 70% 1fr;
     section{
         h1{
             text-align: center;
@@ -103,26 +43,6 @@ main{
                     @include btn(50%);
                 }
             }
-        }
-    }
-    aside{
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        height: fit-content;
-        position:sticky;
-        top: 1rem;
-        gap: 1rem;
-        background-color: $bg-secondary-color;
-        a{
-            padding: 1rem 0;
-            font-size: 1.2rem;
-            text-align: center;
-            &:hover{
-                color: $bg-complementary-color;
-                background-color: $bg-color;
-            }
-            
         }
     }
 }

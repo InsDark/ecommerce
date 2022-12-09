@@ -1,16 +1,25 @@
 <?php 
 class brandsModel {
-    public function getBrands() {
+    private $db;
+    public function __construct() {
         require_once 'config/db.php';
+        $this->db = Database::connect();
+
+    }
+    public function getBrands() {
         $brands = [];
-        $db = Database::connect();
-        $res= $db->query("SELECT * FROM brands");
+        $res= $this->db->query("SELECT * FROM brands");
         while ($row = $res->fetchObject()) {
             $brands[] = $row; 
         }
-        require_once 'views/layout/asideBrands.php';
+        return $brands;
     }
+
     public function index() {
-        $this->getBrands();
+        $res = $this->getBrands();
+        return $res;
+    }
+    public function addBrand() {
+        
     }
 }

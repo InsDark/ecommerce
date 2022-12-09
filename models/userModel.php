@@ -1,7 +1,13 @@
 <?php 
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once './../config/parameters.php';
     require_once './../config/db.php';
-    if(!isset($_SESSION)) {session_start();}
+    $action = $_GET['action'];
+    $user = new User();
+    $user->$action();
+}
+if(!isset($_SESSION)) {session_start();}
+
 class User {
     private $name; 
     private $lastName;
@@ -14,23 +20,24 @@ class User {
     
     public function __construct() {
         $this->db = Database::connect();
-        $this->role = 1;
+        $this->role = 2;
     } 
+
     public function loginUser() {
 
         if(empty($_POST['user-email'] || $_POST['user-email' == ''] )){
-            $this->errors['email-error'] = 'The email is required';
+            $_SESSION['errors']['email-error'] = 'The email is required';
             header('Location: ' . BASE_URL . 'user/login');
         } else {
             $this->email = $_POST['user-email'];
-            unset($this->errors['email-error']);
+            unset($_SESSION['errors']['email-error']);
         }
         if(empty($_POST['user-password']) || $_POST['user-password'] == '') {
-            $this->errors['email-error'] = 'The email is required';
+            $_SESSION['errors']['email-error'] = 'The email is required';
             header('Location: ' . BASE_URL . 'user/login');
         } else {
             $this->password = $_POST['user-password'];
-            unset($this->errors['email-error']);
+            unset($_SESSION['errors']['email-error']);
         } 
 
         $res = $this->db->query("SELECT * FROM users where user_email = '{$this->email}'")->fetch();
@@ -38,6 +45,7 @@ class User {
             $auth = password_verify($this->password, $res['user_password']);
             if($auth) {
                 $_SESSION['identity'] = $res;
+                unset($_SESSION['errors']);
                 header('Location:' . BASE_URL);
             } else {
                 $_SESSION['errors']['email-error'] = 'The email is incorrect';
@@ -118,8 +126,17 @@ class User {
         }
         
     }
+    public function adminPanel() {
+        require 'views/layout/header.php';
+        echo '<main>'; 
+        if($_GET['subAction'] == 'brands') {
+            require_once 'controllers/brandsController.php';
+            require_once 'models/brandsModel.php';
+            $brand = new brandsController();
+            $brands = $brand->getBrands();
+        }
+        require 'views/user/panel.php';
+        require 'views/layout/aside.php';
+        echo '</main>';
+    }
 }
-
-$action = $_GET['action'];
-$user = new User();
-$user->$action();
