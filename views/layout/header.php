@@ -11,10 +11,10 @@ if(!isset($_SESSION)){
         <div class='user-details'>
             <?php if(isset($_SESSION['identity'])) : ?>
                 <img src="<?= BASE_URL ?>src\pictures\users\<?= $_SESSION['identity']['user_image']?>.jpg" alt="user-image">
-                <a href='<?= BASE_URL ?>user/panel'>What's up, <?= $_SESSION['identity']['user_name']?>?</a>
+                <a href='<?= BASE_URL ?>user/panel/'>What's up, <?= $_SESSION['identity']['user_name']?>?</a>
             <?php endif; ?> 
             <?php if(!isset($_SESSION['identity'])) : ?>
-                <a href="<?= BASE_URL ?>user/login"><i class='fa fa-user'></i>Login</a>
+                <a href="<?= BASE_URL ?>user/login/"><i class='fa fa-user'></i>Login</a>
             <?php endif; ?> 
         </div>
     </header>

@@ -3,4 +3,4 @@ RewriteEngine on
 # ErrorDocument 404 http://localhost/Ecommerce/404
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
-RewriteRule ^([a-zA-Z0-9-/]*)/([a-zA-Z0-9-/]*) index.php?action=$1&subAction=$2
+RewriteRule ^([a-zA-Z0-9-/]*)/([a-zA-Z0-9-/]*)/([a-zA-Z0-9-/]*) index.php?action=$1&subAction=$2&extra=$3

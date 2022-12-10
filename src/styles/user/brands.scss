@@ -14,7 +14,7 @@
         align-items: center;
         padding: 1rem;
         cursor:auto;
-        button{
+        a{
             @include btn(auto);
         }
     }

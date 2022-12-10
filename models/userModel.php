@@ -44,17 +44,18 @@ class User {
         if($res) {
             $auth = password_verify($this->password, $res['user_password']);
             if($auth) {
+                session_start();
                 $_SESSION['identity'] = $res;
                 unset($_SESSION['errors']);
                 header('Location:' . BASE_URL);
             } else {
                 $_SESSION['errors']['email-error'] = 'The email is incorrect';
                 $_SESSION['errors']['password-error'] = 'The password is incorrect';
-                header('Location:' . BASE_URL . 'user/login');
+                header('Location:' . BASE_URL . 'user/login/');
             }
         } else {
             $this->errors['email-error'] = 'The email doesnt exists';
-            header('location: ' . BASE_URL . 'user/login');
+            header('location: ' . BASE_URL . 'user/login/');
         }
     }
 
@@ -138,5 +139,9 @@ class User {
         require 'views/user/panel.php';
         require 'views/layout/aside.php';
         echo '</main>';
+    }
+    public function closeSession() {
+        session_destroy();
+        header('Location: ' . BASE_URL);
     }
 }

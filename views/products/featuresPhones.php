@@ -1,4 +1,3 @@
-<main>
         <section>
             <h1>Feature Phones</h1>
             <div class='products'>
@@ -45,4 +44,3 @@
             $brandsController = new BrandsController();
             $brandsController->getBrands();
             ?>
-    </main>
