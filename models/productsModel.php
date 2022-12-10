@@ -23,6 +23,29 @@ class Products {
 
     }
 
+    public function getAllProducts() {
+        $res = $this->db->query("SELECT * FROM products")->fetchAll();
+        return $res;
+    }
+    public function viewProduct() {
+        $product = $this->db->query("SELECT * FROM products where product_id = {$_GET['extra']}")->fetch();
+
+        require 'views/layout/header.php';
+        echo '<main>';
+        echo "<section>" ?>
+            <h1><?=$product['product_model']?></h1>
+            <img src='<?=BASE_URL?>src/pictures/products/<?=$product['product_image']?>'>
+            <div class='products-details'>
+                <h2>Price: <span> $ <?= $product['product_price']?></span></h2>
+                <h2>Stock: <span> <?= $product['product_stock']?> Units </span></h2>
+                <p><?= $product['product_description']?></p>
+                <a href="">Add to cart</a>
+            </div>
+        </section>
+        <?php  require 'views/layout/aside.php';
+        echo '</main>';
+        
+    }
     public function addProduct() {
         $this->brand = $_POST['product-brand'];
         $this->model = $_POST['product-model'];

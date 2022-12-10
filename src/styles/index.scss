@@ -39,8 +39,8 @@ main{
                 .product-details{
                     text-align: center;
                 }
-                button{
-                    @include btn(50%);
+                a{
+                    @include btn(auto);
                 }
             }
         }

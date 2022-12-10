@@ -6,9 +6,8 @@
 
     <?php endif; ?>
     <?php if(isset($_SESSION['identity']['user_rol']) && $_SESSION['identity']['user_rol'] == 2): ?>
-        <a href="panel?act=products">List Products</a>
-        <a href="panel?act=brands">List Brands</a>
-        <a href="">Log Out</a>
+        <a href="user/cart/">Cart</a>
+        <a href="<?=BASE_URL?>user/close/">Log Out</a>
     <?php endif; ?>
     <?php if(!isset($_SESSION['identity']['user_rol'])) {
         require_once 'controllers/brandsController.php';
@@ -17,6 +16,5 @@
         foreach ($res as $brand) : ?>
         <a href="brand/view/<?= $brand->brand_name ?>"><?= $brand->brand_name ?></a>
         <?php endforeach;
-        
      }?>
 </aside>

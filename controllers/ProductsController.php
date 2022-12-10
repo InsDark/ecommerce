@@ -17,4 +17,15 @@ class productsController {
         $productId = $_GET['extra'];
         $products->deleteProduct($productId);
     }
+    public function getAllProducts() {
+        require_once 'models/productsModel.php';
+        $products = new Products();
+        $res= $products->getAllProducts();
+        return $res;
+    }
+    public function view() {
+        require_once 'models/productsModel.php';
+        $products = new Products();
+        $res= $products->viewProduct();
+    }
 }

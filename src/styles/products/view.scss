@@ -1,0 +1,30 @@
+@import './../vars';
+@import './../mixins';
+section {
+    display: grid;
+    padding: 1rem 5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    h1{
+        grid-area: 1/1/2/3;
+    }
+    img{
+        width: 20rem;
+        height: auto;
+    }
+    .products-details{
+        display: inherit;
+        h2{
+            font-size: 1.3rem;
+            span{
+                color: $text-color;
+            }
+        }
+        a{
+            @include btn(auto);
+            &:hover{
+                color: $bg-color;
+            }
+        }
+    }
+}

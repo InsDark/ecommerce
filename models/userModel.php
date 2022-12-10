@@ -144,4 +144,9 @@ class User {
         session_destroy();
         header('Location: ' . BASE_URL);
     }
+
+    public function userPanel() {
+        require_once 'views/layout/header.php';
+        require_once 'views/layout/aside.php';
+    }
 }
