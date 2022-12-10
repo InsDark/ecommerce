@@ -33,4 +33,10 @@ class userController {
         $user = new User();
         $user->closeSession();
     }
+
+    public function cart() {
+        require_once 'models/userModel.php';
+        $user = new User();
+        $user->cart();
+    }
 }

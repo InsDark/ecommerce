@@ -39,7 +39,7 @@ class Products {
                 <h2>Price: <span> $ <?= $product['product_price']?></span></h2>
                 <h2>Stock: <span> <?= $product['product_stock']?> Units </span></h2>
                 <p><?= $product['product_description']?></p>
-                <a href="">Add to cart</a>
+                <a href="<?= BASE_URL?>product/addToCart">Add to cart</a>
             </div>
         </section>
         <?php  require 'views/layout/aside.php';
@@ -68,5 +68,10 @@ class Products {
     }
     public function __construct() {
         $this->db =  Database::connect();
+    }
+    public function addToCart() {
+        session_start();
+        $_SESSION['cart'][] = $_GET['extra']; 
+        header('Location:' . BASE_URL. 'user/cart/');
     }
 }

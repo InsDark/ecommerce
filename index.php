@@ -9,7 +9,7 @@
         if(isset($_GET['action'])) {
             $controller = $_GET['action'];
             
-            if($controller == 'user' || $controller == 'products' || $controller == 'brands') {
+            if($controller == 'user' || $controller == 'products' || $controller == 'brands' || $controller == 'order') {
                 require_once "controllers/$controller" . 'Controller.php';
                 $method = $_GET['subAction'];
                 $className = $controller . 'Controller';
@@ -35,7 +35,7 @@
                             <span> <?= $product['product_stock']?> Units</span>
                         </div>
                         <a href="<?= BASE_URL . 'products/view/' . $product['product_id']?>">View Product</a>
-                        <a >Add to Cart</a>
+                        <a  href="<?=BASE_URL?>products/addToCart/<?= $product['product_id']?>">Add to Cart</a>
                     </div>
                     <?php endforeach; ?> 
                 </div>

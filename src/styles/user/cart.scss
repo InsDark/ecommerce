@@ -1,0 +1,34 @@
+@import './../vars';
+@import './../mixins';
+img{
+    height: 10rem;
+    width: auto;
+}
+
+section{
+    padding: 0;
+    gap: 1rem;
+    h1{
+        background-color: $bg-secondary-color;
+        width: 100%;
+        padding: 1rem;
+        
+    }
+    background-color: $bg-color;
+    .cart-product{
+        padding: 1rem 10rem;
+        background-color: $bg-secondary-color;
+        display: grid ;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        h2{
+            grid-area: 1/1/2/3;
+        }
+        a{
+            @include btn(100%);
+            &:hover{
+                color: $bg-color;
+            }
+        }
+    }
+}

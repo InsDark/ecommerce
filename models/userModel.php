@@ -147,6 +147,16 @@ class User {
 
     public function userPanel() {
         require_once 'views/layout/header.php';
+        echo '<main>'; 
+        require_once 'views/user/userPanel.php';
         require_once 'views/layout/aside.php';
+        echo '</main>';
+    }
+    public function cart() {
+        require_once 'views/layout/header.php';
+        echo '<main>';
+        require_once 'views/user/userPanel.php';
+        require 'views/layout/aside.php';
+        echo '</main>';
     }
 }

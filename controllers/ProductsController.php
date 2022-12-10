@@ -28,4 +28,10 @@ class productsController {
         $products = new Products();
         $res= $products->viewProduct();
     }
+    public function addToCart() {
+        require_once 'models/productsModel.php';
+        $products = new Products();
+        $res= $products->addToCart();
+
+    }
 }

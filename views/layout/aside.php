@@ -6,7 +6,8 @@
 
     <?php endif; ?>
     <?php if(isset($_SESSION['identity']['user_rol']) && $_SESSION['identity']['user_rol'] == 2): ?>
-        <a href="user/cart/">Cart</a>
+        <a href="<?=BASE_URL?>user/cart/">My Cart</a>
+        <a href="<?=BASE_URL?>user/orders/">My Orders</a>
         <a href="<?=BASE_URL?>user/close/">Log Out</a>
     <?php endif; ?>
     <?php if(!isset($_SESSION['identity']['user_rol'])) {
